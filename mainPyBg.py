@@ -24,10 +24,6 @@ clock60 = dict(zip(range(60), range(0, 360, 6)))  # for hours, minutes and secon
 
 font = pg.font.SysFont('Verdana', 60)
 img = pg.image.load('img/2.png').convert_alpha()
-# bg = pg.image.load('img/bg4.jpg').convert()
-# bg_rect = bg.get_rect()
-# bg_rect.center = WIDTH, HEIGHT
-
 
 class Star:
     def __init__(self, app):
@@ -53,9 +49,6 @@ class Star:
         self.size = (Z_DISTANCE - self.pos3d.z) / (0.2 * self.pos3d.z)
         # rotate xy
         self.pos3d.xy = self.pos3d.xy.rotate(0.2)
-        # mouse
-        # mouse_pos = CENTER - vec2(pg.mouse.get_pos())
-        # self.screen_pos += mouse_pos
 
     def draw(self):
         s = self.size
@@ -94,14 +87,6 @@ class App:
             self.screen.blit(self.alpha_surface, (0, 0))
             self.starfield.run()
 
-
-            # self.dx *= -1 if bg_rect.left > 0 or bg_rect.right < WIDTH else 1
-            # self.dy *= -1 if bg_rect.top > 0 or bg_rect.bottom < HEIGHT else 1
-            # bg_rect.centerx += self.dx
-            # bg_rect.centery += self.dy
-            # self.screen.blit(bg, bg_rect)
-            # surface.blit(img, (0, 0))
-            # get time now
             t = datetime.now()
             hour, minute, second = ((t.hour % 12) * 5 + t.minute // 12) % 60, t.minute, t.second
             # draw base
