@@ -1,4 +1,4 @@
 # Python-Clock
 Python Clock in Pygame
 
-![clock](result img/mainPyBg.png "clock")
+![clock](result_img/mainPyBg-result.png "clock")
